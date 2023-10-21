@@ -1,16 +1,14 @@
 package com.example.springboot.models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;
 import java.util.UUID;
 
-@MappedSuperclass
-public class UsuarioModel extends RepresentationModel<ProductModel> implements Serializable {
+@Entity
+@Table(name = "TB_USUARIO")
+public class UsuarioModel extends RepresentationModel<UsuarioModel> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

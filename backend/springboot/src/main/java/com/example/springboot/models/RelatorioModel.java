@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "TB_RELATORIO")
-public class RelatorioModel extends RepresentationModel<ProductModel> implements Serializable {
+public class RelatorioModel extends RepresentationModel<RelatorioModel> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -19,14 +19,6 @@ public class RelatorioModel extends RepresentationModel<ProductModel> implements
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private Date dataGeracao;
-
-    @ManyToOne
-    @JoinColumn(name = "id_administrador_model")
-    private AdministradorModel administradorModel;
-
-    @ManyToMany
-    @JoinColumn(name = "id_viagem")
-    private List<ViagemModel> viagemModelList;
 
     public UUID getId() {
         return id;
@@ -42,14 +34,6 @@ public class RelatorioModel extends RepresentationModel<ProductModel> implements
 
     public void setDataGeracao(Date dataGeracao) {
         this.dataGeracao = dataGeracao;
-    }
-
-    public AdministradorModel getAdministradorModel() {
-        return administradorModel;
-    }
-
-    public void setAdministradorModel(AdministradorModel administradorModel) {
-        this.administradorModel = administradorModel;
     }
 
 }

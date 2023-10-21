@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "TB_SISTEMAEMBARCADO")
- class SistemaEmbarcadoModel extends RepresentationModel<ProductModel> implements Serializable {
+ class SistemaEmbarcadoModel extends RepresentationModel<SistemaEmbarcadoModel> implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -21,15 +21,6 @@ import java.util.UUID;
     private Double sensorAcelerometro;
     private String posicaoGPS;
     private Date horaColeta;
-
-    @OneToOne(mappedBy = "sistemaEmbarcadoModel", cascade = CascadeType.ALL)
-    private VanModel vanModel;
-
-    @OneToOne(mappedBy = "sistemaEmbarcadoModel", cascade = CascadeType.ALL)
-    private OnibusModel onibusModel;
-
-    @OneToOne(mappedBy = "sistemaEmbarcadoModel", cascade = CascadeType.ALL)
-    private ViagemModel viagemModel;
 
     public UUID getId() {
         return id;
@@ -77,21 +68,5 @@ import java.util.UUID;
 
     public void setHoraColeta(Date horaColeta) {
         this.horaColeta = horaColeta;
-    }
-
-    public VanModel getVanModel() {
-        return vanModel;
-    }
-
-    public void setVanModel(VanModel vanModel) {
-        this.vanModel = vanModel;
-    }
-
-    public OnibusModel getOnibusModel() {
-        return onibusModel;
-    }
-
-    public void setOnibusModel(OnibusModel onibusModel) {
-        this.onibusModel = onibusModel;
     }
 }

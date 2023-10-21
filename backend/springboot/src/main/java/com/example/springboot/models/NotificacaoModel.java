@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "TB_NOTIFICACAO")
-public class NotificacaoModel extends RepresentationModel<ProductModel> implements Serializable {
+public class NotificacaoModel extends RepresentationModel<NotificacaoModel> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

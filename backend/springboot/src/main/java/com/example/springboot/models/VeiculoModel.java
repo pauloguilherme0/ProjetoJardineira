@@ -6,8 +6,9 @@ import org.springframework.hateoas.RepresentationModel;
 import java.io.Serializable;
 import java.util.UUID;
 
-@MappedSuperclass
-public class VeiculoModel extends RepresentationModel<ProductModel> implements Serializable {
+@Entity
+@Table(name = "TB_VEICULO")
+public class VeiculoModel extends RepresentationModel<VeiculoModel> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

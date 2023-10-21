@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "TB_VIAGEM")
-public class ViagemModel extends RepresentationModel<ProductModel> implements Serializable {
+public class ViagemModel extends RepresentationModel<ViagemModel> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -23,27 +23,52 @@ public class ViagemModel extends RepresentationModel<ProductModel> implements Se
     private Date dataViagem;
     private Integer numViagem;
 
-    @ManyToMany(mappedBy = "viagemModelList", cascade = CascadeType.ALL)
-    private List<RelatorioModel> relatorioModel;
+    public UUID getId() {
+        return id;
+    }
 
-    @OneToOne
-    @JoinColumn(name = "id_van")
-    private VanModel vanModel;
+    public void setId(UUID id) {
+        this.id = id;
+    }
 
-    @OneToOne
-    @JoinColumn(name = "id_onibus")
-    private OnibusModel onibusModel;
+    public String getPercurso() {
+        return percurso;
+    }
 
-    @OneToOne
-    @JoinColumn(name = "id_motorista")
-    private MotoristaModel motoristaModel;
+    public void setPercurso(String percurso) {
+        this.percurso = percurso;
+    }
 
-    @OneToOne
-    @JoinColumn(name = "id_sistema_embarcado")
-    private SistemaEmbarcadoModel sistemaEmbarcadoModel;
+    public Date getHorarioPartida() {
+        return horarioPartida;
+    }
 
-    @ManyToOne
-    @JoinColumn(name = "id_ocorrencia_especial")
-    private OcorrenciaEspecialModel ocorrenciaEspecialModel;
+    public void setHorarioPartida(Date horarioPartida) {
+        this.horarioPartida = horarioPartida;
+    }
+
+    public Date getPrevisaoChegada() {
+        return previsaoChegada;
+    }
+
+    public void setPrevisaoChegada(Date previsaoChegada) {
+        this.previsaoChegada = previsaoChegada;
+    }
+
+    public Date getDataViagem() {
+        return dataViagem;
+    }
+
+    public void setDataViagem(Date dataViagem) {
+        this.dataViagem = dataViagem;
+    }
+
+    public Integer getNumViagem() {
+        return numViagem;
+    }
+
+    public void setNumViagem(Integer numViagem) {
+        this.numViagem = numViagem;
+    }
 
 }
